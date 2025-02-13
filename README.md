@@ -47,14 +47,16 @@
 4. 使用空格键暂停/继续游戏
 5. 通过滑块调节游戏速度
 
-## 文件结构 
+## 文件结构
+```
 snake-game/
-├── index.html # 主页面
-├── README.md # 项目说明文档
+├── index.html          # 游戏主页面
+├── README.md           # 项目说明文档
 ├── styles/
-│ └── style.css # 样式文件
+│   └── style.css      # 样式文件
 ├── scripts/
-│ ├── game.js # 游戏核心逻辑
-│ └── leaderboard.js # 排行榜逻辑
+│   ├── game.js        # 游戏核心逻辑
+│   └── leaderboard.js # 排行榜逻辑
 └── assets/
-└── favicon.svg # 网站图标
+    └── favicon.svg    # 网站图标
+```
