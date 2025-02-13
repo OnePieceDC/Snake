@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>优雅贪吃蛇</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <h1>优雅贪吃蛇</h1>
+        <div class="score-container">
+            <span>当前分数: <span id="current-score">0</span></span>
+            <span>最高分数: <span id="high-score">0</span></span>
+        </div>
+    </header>
+
+    <main>
+        <div class="game-container">
+            <div class="game-overlay" id="gameOverlay">
+                <div class="overlay-content">
+                    <h3>准备开始</h3>
+                    <p>点击"开始游戏"按钮开始</p>
+                </div>
+            </div>
+            <canvas id="gameCanvas"></canvas>
+            <div class="controls">
+                <button id="startBtn" class="btn">开始游戏</button>
+            </div>
+        </div>
+        
+        <div class="leaderboard">
+            <div class="game-settings">
+                <h3>游戏设置</h3>
+                <div class="speed-setting">
+                    <label for="speedRange">蛇的速度:</label>
+                    <input type="range" id="speedRange" min="1" max="10" value="5">
+                    <span id="speedValue">5</span>
+                </div>
+            </div>
+            <div class="game-instructions">
+                <h3>操作说明</h3>
+                <ul>
+                    <li>↑ 或 W : 向上移动</li>
+                    <li>↓ 或 S : 向下移动</li>
+                    <li>← 或 A : 向左移动</li>
+                    <li>→ 或 D : 向右移动</li>
+                    <li>空格键 : 暂停/继续</li>
+                    <li>长按方向键 : 1.5倍速移动</li>
+                    <li>吃到彩色豆子后蛇身会变色</li>
+                </ul>
+            </div>
+            <h2>排行榜</h2>
+            <div id="leaderboardList"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>DC_onepiece | 设计与开发 © 2025</p>
+    </footer>
+
+    <script src="scripts/game.js"></script>
+    <script src="scripts/leaderboard.js"></script>
+</body>
+</html> 

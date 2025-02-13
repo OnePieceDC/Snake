@@ -1,0 +1,245 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #81C784;
+    --background-color: #F5F5F5;
+    --text-color: #333333;
+    --border-radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.score-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    font-size: 1.1rem;
+}
+
+main {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.game-container {
+    background: white;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;
+    width: 552px;
+    display: flex;
+    flex-direction: column;
+}
+
+#gameCanvas {
+    background: #FAFAFA;
+    border-radius: var(--border-radius);
+    display: block;
+}
+
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius);
+    text-align: center;
+    z-index: 1;
+}
+
+.overlay-content {
+    background: white;
+    padding: 1.5rem 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.overlay-content h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.overlay-content p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.game-settings {
+    background: #F8F9FA;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+}
+
+.speed-setting {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.game-instructions {
+    background: #F8F9FA;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+}
+
+.game-instructions ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.5rem;
+}
+
+.game-instructions li {
+    padding: 0.3rem 0;
+    color: #666;
+}
+
+.controls {
+    margin-top: auto;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s;
+    z-index: 2;
+    outline: none;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.leaderboard {
+    background: white;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    min-width: 300px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.leaderboard h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#leaderboardList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.leaderboard-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background: linear-gradient(to right, #F5F5F5, #FFFFFF);
+    border-radius: 6px;
+    transition: transform 0.2s;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.leaderboard-item:hover {
+    transform: translateX(5px);
+}
+
+.leaderboard-empty {
+    text-align: center;
+    padding: 1rem;
+    color: #666;
+    font-style: italic;
+}
+
+.leaderboard-item span:first-child {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.leaderboard-item span:last-child {
+    color: #666;
+    font-size: 0.9em;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: white;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+}
+
+footer p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.score-container span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+}
+
+.score-container span span {
+    color: var(--primary-color);
+    font-weight: 500;
+} 
